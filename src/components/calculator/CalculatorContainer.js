@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import CalculatorControls from './CalculatorControls';
+import CalculatorDisplay from './CalculatorDisplay';
 
 const CalculatorContainer = () => {
   return (
     <Container>
-      <p>calculator here!</p>
+      <CalculatorDisplay />
+      <CalculatorControls />
     </Container>
   );
 };
@@ -20,4 +23,6 @@ const Container = styled.div`
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 `;
