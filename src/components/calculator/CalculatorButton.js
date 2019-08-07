@@ -1,9 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CalculatorButton = ({ children, circle, red, redCircle }) => {
+const CalculatorButton = ({
+  children,
+  circle,
+  handleCalculationConcat,
+  input,
+  red,
+  redCircle
+}) => {
   return (
-    <StyledButton circle={circle} red={red} redCircle={redCircle}>
+    <StyledButton
+      onClick={() => handleCalculationConcat(input)}
+      circle={circle}
+      red={red}
+      redCircle={redCircle}
+    >
       {children}
     </StyledButton>
   );

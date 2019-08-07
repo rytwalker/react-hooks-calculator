@@ -1,13 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import CalculatorControls from './CalculatorControls';
 import CalculatorDisplay from './CalculatorDisplay';
 
 const CalculatorContainer = () => {
+  const [total, setTotal] = useState(0);
+  const [calculation, setCalculation] = useState('0');
+
+  const handleCalculationConcat = input => {
+    const operations = new Set(['/', 'X', '-', '+']);
+    // if first number
+    if (calculation === '0') {
+      if (operations.has(input)) {
+        setCalculation(`${calculation} ${input} `);
+      } else {
+        setCalculation(input);
+      }
+    } else {
+      if (operations.has(input)) {
+        setCalculation(`${calculation} ${input} `);
+      } else if (input === 'C') {
+        setCalculation('0');
+        setTotal(0);
+      } else {
+        setCalculation(`${calculation}${input}`);
+      }
+    }
+  };
+
+  const handleCalculation = () => {
+    const operations = new Set(['/', 'X', '-', '+']);
+    const calcArr = [...calculation.split(' ')];
+    if (calcArr.length === 1) {
+      setTotal(calcArr[0]);
+    } else {
+      let calculation = 0;
+      let currOperation = null;
+      calcArr.forEach((numOrOperation, idx) => {
+        if (calculation === 0 && idx === 0) {
+          calculation += parseInt(numOrOperation);
+        } else {
+          if (operations.has(numOrOperation)) {
+            currOperation = numOrOperation;
+          } else if (currOperation) {
+            if (currOperation === '+') {
+              calculation += parseInt(numOrOperation);
+            } else if (currOperation === '-') {
+              calculation -= parseInt(numOrOperation);
+            } else if (currOperation === 'X') {
+              calculation *= parseInt(numOrOperation);
+            } else if (currOperation === '/') {
+              calculation /= parseInt(numOrOperation);
+            }
+          }
+        }
+      });
+      setTotal(calculation);
+    }
+  };
+
   return (
     <Container>
-      <CalculatorDisplay />
-      <CalculatorControls />
+      <CalculatorDisplay total={total} calculation={calculation} />
+      <CalculatorControls
+        handleCalculationConcat={handleCalculationConcat}
+        handleCalculation={handleCalculation}
+      />
     </Container>
   );
 };

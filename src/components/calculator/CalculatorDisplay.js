@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CalculatorDisplay = () => {
+const CalculatorDisplay = ({ calculation, total }) => {
   return (
     <StyledDisplay>
-      <Calculation>114 x 5</Calculation>
-      <Answer>570</Answer>
+      <CalculationDisplay>{calculation}</CalculationDisplay>
+      <TotalDisplay>{total}</TotalDisplay>
     </StyledDisplay>
   );
 };
@@ -20,12 +20,12 @@ const StyledDisplay = styled.div`
   border-bottom: 1px solid #5c5454;
 `;
 
-const Calculation = styled.div`
+const CalculationDisplay = styled.div`
   color: #5c5454;
   margin-right: 1rem;
 `;
 
-const Answer = styled.div`
+const TotalDisplay = styled.div`
   font-size: 8rem;
   padding: 0 0 2rem;
 `;

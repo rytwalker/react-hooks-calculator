@@ -3,15 +3,19 @@ import styled from 'styled-components';
 import CalculatorButton from './CalculatorButton';
 import { buttonData } from './buttonData';
 
-const CalculatorControls = () => {
+const CalculatorControls = ({ handleCalculation, handleCalculationConcat }) => {
   return (
     <StyledControls>
       {buttonData.map(button => (
         <CalculatorButton
           key={button.id}
-          red={button.red}
           circle={button.circle}
+          input={button.button}
+          red={button.red}
           redCircle={button.reCircle}
+          handleCalculationConcat={
+            button.button === '=' ? handleCalculation : handleCalculationConcat
+          }
         >
           {button.button}
         </CalculatorButton>
