@@ -1,0 +1,22 @@
+export const buttonData = [
+  { id: 1, button: 'C', circle: true, red: false, reCircle: false },
+  { id: 2, button: '+/-', circle: true, red: false, reCircle: false },
+  { id: 3, button: '%', circle: true, red: false, reCircle: false },
+  { id: 4, button: '/', circle: true, red: true, reCircle: false },
+  { id: 5, button: '7', circle: false, red: false, reCircle: false },
+  { id: 6, button: '8', circle: false, red: false, reCircle: false },
+  { id: 7, button: '9', circle: false, red: false, reCircle: false },
+  { id: 8, button: 'X', circle: true, red: true, reCircle: false },
+  { id: 9, button: '4', circle: false, red: false, reCircle: false },
+  { id: 10, button: '5', circle: false, red: false, reCircle: false },
+  { id: 11, button: '6', circle: false, red: false, reCircle: false },
+  { id: 12, button: '-', circle: true, red: true, reCircle: false },
+  { id: 13, button: '1', circle: false, red: false, reCircle: false },
+  { id: 14, button: '2', circle: false, red: false, reCircle: false },
+  { id: 15, button: '3', circle: false, red: false, reCircle: false },
+  { id: 16, button: '+', circle: true, red: true, reCircle: false },
+  { id: 17, button: '0', circle: false, red: false, reCircle: false },
+  { id: 18, button: '00', circle: false, red: false, reCircle: false },
+  { id: 19, button: '.', circle: false, red: false, reCircle: false },
+  { id: 20, button: '=', circle: false, red: false, reCircle: true }
+];

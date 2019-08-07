@@ -1,42 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import CalculatorButton from './CalculatorButton';
+import { buttonData } from './buttonData';
 
 const CalculatorControls = () => {
   return (
     <StyledControls>
-      <CalculatorButton circle>C</CalculatorButton>
-      <CalculatorButton circle>+/-</CalculatorButton>
-      <CalculatorButton circle>%</CalculatorButton>
-      <CalculatorButton circle red>
-        /
-      </CalculatorButton>
-
-      <CalculatorButton>7</CalculatorButton>
-      <CalculatorButton>8</CalculatorButton>
-      <CalculatorButton>9</CalculatorButton>
-      <CalculatorButton circle red>
-        X
-      </CalculatorButton>
-
-      <CalculatorButton>4</CalculatorButton>
-      <CalculatorButton>5</CalculatorButton>
-      <CalculatorButton>6</CalculatorButton>
-      <CalculatorButton circle red>
-        -
-      </CalculatorButton>
-
-      <CalculatorButton>1</CalculatorButton>
-      <CalculatorButton>2</CalculatorButton>
-      <CalculatorButton>3</CalculatorButton>
-      <CalculatorButton circle red>
-        +
-      </CalculatorButton>
-
-      <CalculatorButton>0</CalculatorButton>
-      <CalculatorButton>00</CalculatorButton>
-      <CalculatorButton>.</CalculatorButton>
-      <CalculatorButton redCircle>=</CalculatorButton>
+      {buttonData.map(button => (
+        <CalculatorButton
+          key={button.id}
+          red={button.red}
+          circle={button.circle}
+          redCircle={button.reCircle}
+        >
+          {button.button}
+        </CalculatorButton>
+      ))}
     </StyledControls>
   );
 };

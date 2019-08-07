@@ -20,7 +20,7 @@ const Container = styled.div`
   height: 650px;
   background: #0b0b0b;
   color: #fafafa;
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   display: flex;
